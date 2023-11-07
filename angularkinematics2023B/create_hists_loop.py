@@ -161,16 +161,16 @@ def create_mjj_hists(data,plotName,outFileName,loopingvariable,minimumrange,maxi
 
     for i in range(0,data.size):
 
-        if 250 < data[i]:
-            hist_over250.Fill(data[i])
-        elif 350 < data[i]:
-            hist_over350.Fill(data[i])
-        elif 500 < data[i]:
-            hist_over500.Fill(data[i])
+        if 850 < data[i]:
+            hist_over850.Fill(data[i])
         elif 650 < data[i]:
             hist_over650.Fill(data[i])
-        elif 850 < data[i]:
-            hist_over850.Fill(data[i])
+        elif 500 < data[i]:
+            hist_over500.Fill(data[i])
+        elif 350 < data[i]:
+            hist_over350.Fill(data[i])
+        elif 250 < data[i]:
+            hist_over250.Fill(data[i])
 
     hist_over250.SetDirectory(0)
     hist_over350.SetDirectory(0)
