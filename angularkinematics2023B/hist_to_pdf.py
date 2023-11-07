@@ -30,7 +30,7 @@ def getRootFiles(FileName,loopVariable):
     return cms250to350hist,cms350to500hist,cms500to650hist,cms650to850hist,cms850to1100hist,cms1100to1400hist,cms1400to1800hist,cms1800to2200hist,cmsover2200hist
 
 #save the files in one pdf (prints the pdf in directory)
-def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
+def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP,title):
     getFileName = directoryR + FileName
     putFileName = directoryP + PlotName
 
@@ -49,7 +49,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms250to350hist.SetLineColor(ROOT.kRed)
     cms250to350hist.SetLineWidth(2)
     cms250to350hist.GetYaxis().SetTitle("N")
-    cms250to350hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms250to350hist.GetXaxis().SetTitle(title)
     cms250to350hist.SetTitle("cms250to350hist")
     cms250to350hist.Draw("h")
     legend1 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -64,7 +64,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms350to500hist.SetLineColor(ROOT.kRed)
     cms350to500hist.SetLineWidth(2)
     cms350to500hist.GetYaxis().SetTitle("N")
-    cms350to500hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms350to500hist.GetXaxis().SetTitle(title)
     cms350to500hist.SetTitle("cms350to500hist")
     cms350to500hist.Draw("h")
     legend2 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -79,7 +79,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms500to650hist.SetLineColor(ROOT.kRed)
     cms500to650hist.SetLineWidth(2)
     cms500to650hist.GetYaxis().SetTitle("N")
-    cms500to650hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms500to650hist.GetXaxis().SetTitle(title)
     cms500to650hist.SetTitle("cms500to650hist")
     cms500to650hist.Draw("h")
     legend3 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -94,7 +94,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms650to850hist.SetLineColor(ROOT.kRed)
     cms650to850hist.SetLineWidth(2)
     cms650to850hist.GetYaxis().SetTitle("N")
-    cms650to850hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms650to850hist.GetXaxis().SetTitle(title)
     cms650to850hist.SetTitle("cms650to850hist")
     cms650to850hist.Draw("h")
     legend4 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -109,7 +109,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms850to1100hist.SetLineColor(ROOT.kRed)
     cms850to1100hist.SetLineWidth(2)
     cms850to1100hist.GetYaxis().SetTitle("N")
-    cms850to1100hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms850to1100hist.GetXaxis().SetTitle(title)
     cms850to1100hist.SetTitle("cms850to1100hist")
     cms850to1100hist.Draw("h")
     legend5 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -124,7 +124,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms1100to1400hist.SetLineColor(ROOT.kRed)
     cms1100to1400hist.SetLineWidth(2)
     cms1100to1400hist.GetYaxis().SetTitle("N")
-    cms1100to1400hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms1100to1400hist.GetXaxis().SetTitle(title)
     cms1100to1400hist.SetTitle("cms1100to1400hist")
     cms1100to1400hist.Draw("h")
     legend6 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -139,7 +139,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms1400to1800hist.SetLineColor(ROOT.kRed)
     cms1400to1800hist.SetLineWidth(2)
     cms1400to1800hist.GetYaxis().SetTitle("N")
-    cms1400to1800hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms1400to1800hist.GetXaxis().SetTitle(title)
     cms1400to1800hist.SetTitle("cms1400to1800hist")
     cms1400to1800hist.Draw("h")
     legend7 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -154,7 +154,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cms1800to2200hist.SetLineColor(ROOT.kRed)
     cms1800to2200hist.SetLineWidth(2)
     cms1800to2200hist.GetYaxis().SetTitle("N")
-    cms1800to2200hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cms1800to2200hist.GetXaxis().SetTitle(title)
     cms1800to2200hist.SetTitle("cms1800to2200hist")
     cms1800to2200hist.Draw("h")
     legend8 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -169,7 +169,7 @@ def saveHistasPdf(FileName,PlotName,LoopVariable,directoryR,directoryP):
     cmsover2200hist.SetLineColor(ROOT.kRed)
     cmsover2200hist.SetLineWidth(2)
     cmsover2200hist.GetYaxis().SetTitle("N")
-    cmsover2200hist.GetXaxis().SetTitle("P_{T1} [GeV]")
+    cmsover2200hist.GetXaxis().SetTitle(title)
     cmsover2200hist.SetTitle("cmsover2200hist")
     cmsover2200hist.Draw("h")
     legend9 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -223,7 +223,7 @@ def saveMjjHistasPdf(FileName,PlotName,directoryR,directoryP):
     hist_over250.SetLineColor(ROOT.kRed)
     hist_over250.SetLineWidth(2)
     hist_over250.GetYaxis().SetTitle("N")
-    hist_over250.GetXaxis().SetTitle("P_{T1} [GeV]")
+    hist_over250.GetXaxis().SetTitle("M_{jj} [GeV]")
     hist_over250.SetTitle("hist_over250")
     hist_over250.Draw("h")
     legend1 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -238,7 +238,7 @@ def saveMjjHistasPdf(FileName,PlotName,directoryR,directoryP):
     hist_over350.SetLineColor(ROOT.kRed)
     hist_over350.SetLineWidth(2)
     hist_over350.GetYaxis().SetTitle("N")
-    hist_over350.GetXaxis().SetTitle("P_{T1} [GeV]")
+    hist_over350.GetXaxis().SetTitle("M_{jj} [GeV]")
     hist_over350.SetTitle("hist_over350")
     hist_over350.Draw("h")
     legend2 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -253,7 +253,7 @@ def saveMjjHistasPdf(FileName,PlotName,directoryR,directoryP):
     hist_over500.SetLineColor(ROOT.kRed)
     hist_over500.SetLineWidth(2)
     hist_over500.GetYaxis().SetTitle("N")
-    hist_over500.GetXaxis().SetTitle("P_{T1} [GeV]")
+    hist_over500.GetXaxis().SetTitle("M_{jj} [GeV]")
     hist_over500.SetTitle("hist_over500")
     hist_over500.Draw("h")
     legend3 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -268,7 +268,7 @@ def saveMjjHistasPdf(FileName,PlotName,directoryR,directoryP):
     hist_over650.SetLineColor(ROOT.kRed)
     hist_over650.SetLineWidth(2)
     hist_over650.GetYaxis().SetTitle("N")
-    hist_over650.GetXaxis().SetTitle("P_{T1} [GeV]")
+    hist_over650.GetXaxis().SetTitle("M_{jj} [GeV]")
     hist_over650.SetTitle("hist_over650")
     hist_over650.Draw("h")
     legend4 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -283,7 +283,7 @@ def saveMjjHistasPdf(FileName,PlotName,directoryR,directoryP):
     hist_over850.SetLineColor(ROOT.kRed)
     hist_over850.SetLineWidth(2)
     hist_over850.GetYaxis().SetTitle("N")
-    hist_over850.GetXaxis().SetTitle("P_{T1} [GeV]")
+    hist_over850.GetXaxis().SetTitle("M_{jj} [GeV]")
     hist_over850.SetTitle("hist_over850")
     hist_over850.Draw("h")
     legend5 = ROOT.TLegend(0.7,0.6,0.85,0.75)
@@ -301,22 +301,22 @@ directoryRoot = "/nfs/dust/cms/user/mueckejo/bachelorthesis_mueckejo/angularkine
 directoryPdf = "/nfs/dust/cms/user/mueckejo/bachelorthesis_mueckejo/angularkinematics2023B/histpdffiles/"
 
 #Write pdf for pt1 Value
-#saveHistasPdf("pt1_histos_run2023B.root","pt1_histos_run2023B.pdf","pt1",directoryRoot,directoryPdf)
+saveHistasPdf("pt1_histos_run2023B.root","pt1_histos_run2023B.pdf","pt1",directoryRoot,directoryPdf,"P_{T1} [GeV]")
 
 #Write pdf for pt2 Value
-#saveHistasPdf("pt2_histos_run2023B.root","pt2_histos_run2023B.pdf","pt2",directoryRoot,directoryPdf)
+saveHistasPdf("pt2_histos_run2023B.root","pt2_histos_run2023B.pdf","pt2",directoryRoot,directoryPdf,"P_{T2} [GeV]")
 
 #Write pdf for y1 Value
-#saveHistasPdf("y1_histos_run2023B.root","y1_histos_run2023B.pdf","y1",directoryRoot,directoryPdf)
+saveHistasPdf("y1_histos_run2023B.root","y1_histos_run2023B.pdf","y1",directoryRoot,directoryPdf,"Y_{1}")
 
 #Write pdf for y2 Value
-#saveHistasPdf("y2_histos_run2023B.root","y2_histos_run2023B.pdf","y2",directoryRoot,directoryPdf)
+saveHistasPdf("y2_histos_run2023B.root","y2_histos_run2023B.pdf","y2",directoryRoot,directoryPdf,"Y_{2}")
 
 #Write pdf for yboost Value
-#saveHistasPdf("yboost_histos_run2023B.root","yboost_histos_run2023B.pdf","yboost",directoryRoot,directoryPdf)
+saveHistasPdf("yboost_histos_run2023B.root","yboost_histos_run2023B.pdf","yboost",directoryRoot,directoryPdf,"Y_{boost}")
 
 #Write pdf for chi Value
-#saveHistasPdf("chi_histos_run2023B.root","chi_histos_run2023B.pdf","chi",directoryRoot,directoryPdf)
+saveHistasPdf("chi_histos_run2023B.root","chi_histos_run2023B.pdf","chi",directoryRoot,directoryPdf,"Chi_{dijet}")
 
 #Write pdf for mjj Value
-#saveMjjHistasPdf("mjj_histos_run2023B.root","mjj_histos_run2023B.pdf",directoryRoot,directoryPdf)
+saveMjjHistasPdf("mjj_histos_run2023B.root","mjj_histos_run2023B.pdf",directoryRoot,directoryPdf)
